@@ -1,65 +1,30 @@
 <!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Travel Treasures</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <script defer src="../static/scripts/common.js"></script>
-    <link rel="stylesheet" href="../static/styles/main.css">
-</head>
+<html lang="pl"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
 <body>
 <div class="container">
-    <ul class="menu">
-        <li class="menu-logo-container">
-            <a href="#">
-                <i class="fa-light fa-treasure-chest fa-flip-horizontal"></i> TravelTreasures
-            </a>
-        </li>
-        <li class="menu-toggle">
-            <a href="#"><i id="toggle-icon" class="far fa-plus-square"></i></a>
-        </li>
-        <li class="menu-item">
-            <a href="#">Kategorie</a>
-        </li>
-        <li class="menu-item">
-            <a href="#">Top10</a>
-        </li>
-        <li class="menu-item">
-            <a href="#">Zaloguj się</a>
-        </li>
-    </ul>
-    <header class="jumbotron">
-        <h1 class="jumbotron-header">Travel Treasures</h1>
-        <p class="jumbotron-description">
-            Najtańsze loty, noclegi i wypożyczalnie. Dziel się z innymi swoimi skarbami i korzystaj z cudzych znalezisk!
-        </p>
-    </header>
     <main class="main-content">
-        <h2 class="list-heading">Promowane znaleziska / Nazwa Kategorii</h2>
+        <h2 class="list-heading" th:text="${heading}">Promowane znaleziska / Nazwa Kategorii</h2>
         <p class="list-description">Opis sekcji, przykładowo opis kategorii, albo strony głównej</p>
-        <ul class="treasure-list">
-            <li class="treasure-list-item">
-                <a href="#">
-                    <img src="../static/img/poster-placeholder.png"
+        <ul class="treasure-list" th:remove="all-but-first">
+            <li class="treasure-list-item" th:each="treasure: ${treasures}">
+                <a href="#" th:href="@{|/treasure/${treasure.id}|}">
+                    <img src="../static/img/poster-placeholder.png" th:src="@{/img/poster-placeholder.png}"
                          alt="tytuł filmu"
                          class="treasure-list-item-poster">
                 </a>
                 <div class="treasure-list-item-card">
                     <div class="treasure-list-item-content">
                         <h3 class="treasure-list-item-title">
-                            <a href="#">Tytul znaleziska</a>
+                            <a href="#" th:href="@{|/treasure/${treasure.id}|}" th:text="${treasure.title}">Tytul znaleziska</a>
                         </h3>
-                        <h4>Gdzie?</h4>
-                        <h4>Kiedy?</h4>
-                        <h4>Cena?</h4>
-                        <h4>Link</h4>
-                        <p>Krotki opis</p>
+                        <h4 th:text="${treasure.destination}">Gdzie?</h4>
+                        <h4 th:text="${treasure.dates}">Kiedy?</h4>
+                        <h4 th:text="${treasure.price} + zł" >Cena?</h4>
+                        <h4 th:text="${treasure.link}">Link</h4>
+                        <p th:text="${treasure.description}">Krotki opis</p>
                     </div>
                     <div class="treasure-list-item-rating">
                         <i class="fas fa-star"></i>
@@ -115,9 +80,6 @@
             </li>
         </ul>
     </main>
-    <footer class="footer">
-        <p>TravelTreasures 2023 <i class="fas fa-copyright"></i> github.com/bartkoo98</p>
-    </footer>
 </div>
 </body>
 </html>

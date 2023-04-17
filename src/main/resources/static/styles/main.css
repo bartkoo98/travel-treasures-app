@@ -129,7 +129,7 @@ i powinna zajmować większość dostępnej przestrzeni
         border: 1px #6d6d6d solid;
     }
     /*Plakat - usuniecie paddingu*/
-    .movie-list-item-poster {
+    .treasure-list-item-poster {
         display: block;
         max-width: 200px;
     }
@@ -150,4 +150,80 @@ i powinna zajmować większość dostępnej przestrzeni
         font-size: 1.6rem;
     }
     /*Listing END*/
+    /*Treasure.html*/
+    /*Informacje o filmie w jednym rzędzie z odstępem od jumbotrona*/
+    .treasure-summary {
+        display: flex;
+        margin-top: 16px;
+    }
+    /*Mniejsza okładka na małych ekranach*/
+    .treasure-summary-cover {
+        object-fit: contain;
+        max-width: 200px;
+    }
+    /*Odstęp informacji o znalezisku od okładki*/
+    .treasure-summary-info {
+        margin-left: 16px;
+    }
+    /*Oryginalny tytuł w kolorze szarym i odstęp pod nim*/
+    .treasure-summary-category {
+        margin-bottom: 16px;
+    }
+    /*Odstępy między poszczególnymi informacjami*/
+    .treasure-summary-item {
+        margin: 8px 0;
+    }
+    /*Większy tytuł filmu*/
+    .treasure-summary-title {
+        font-size: 2rem;
+    }
+    /*Wyśrodkowanie głosowania*/
+    .treasure-rating-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 200px;
+    }
+
+    /*Wyśrodkowanie tekstu Twoja ocena*/
+    .treasure-rating-form > p {
+        text-align: center;
+        margin-bottom: 16px;
+    }
+
+    /*Powiększenie i wyśrodkowanie średniej oceny*/
+    .treasure-rating-value {
+        font-size: 4rem;
+        text-align: center;
+    }
+    /*Styl dla przycisków z ocenami*/
+    .treasure-rating-button {
+        background-color: #ffc107;
+        border: 0;
+        padding: 4px;
+        font-size: 1.6rem;
+        border-radius: 4px;
+        opacity: 0.8;
+    }
+    /*Usunięcie przezroczystości po najechaniu na przycisk*/
+    .treasure-rating-button:hover {
+        opacity: 1;
+    }
+    /*Odstępy między elementami w ramce z głosowaniem*/
+    .treasure-rating-container > * {
+        margin: 8px 0;
+    }
+    /*Ramka dla boxu z głosowaniem*/
+    .treasure-section {
+        margin-top: 16px;
+        padding: 16px;
+        border: 1px #6d6d6d solid;
+    }
+    /*Treasure.html END*/
+    /*Odstęp pod nagłówkami sekcji*/
+    .treasure-section-heading {
+        margin-bottom: 8px;
+    }
+
 }
