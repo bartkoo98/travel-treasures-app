@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl"
+      xmlns:th="https://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title th:text="|${treasure.title} - TravelTreasure|">Tytuł znaleziska - TravelTreasure</title>
+</head>
+<body>
+<div class="container">
+    <main class="main-content">
+        <section class="treasure">
+            <!-- Podsumowanie -->
+            <div class="treasure-summary">
+                <!-- Plakat -->
+                <img src="../static/img/poster-placeholder.png"
+                     th:src="@{/img/poster-placeholder.png}"
+                     alt="tytuł znaleziska"
+                     th:alt="${treasure.title}"
+                     class="treasure-summary-cover"
+                />
+                <!-- informacje o filmie -->
+                <div class="treasure-summary-info">
+                    <h1 class="treasure-summary-title" th:text="${treasure.title}">Tanie loty do Stanów na majówkę!</h1>
+                    <p class="treasure-summary-category">Kategoria: <a href="#"
+                                                                       th:href="@{|/kategoria/${treasure.category}|}"
+                                                                       th:text="${treasure.category}">Flights</a>
+                    </p>
+                    <p class="treasure-summary-item" th:text="${treasure.destination}">Kierunek: Stany Zjednoczone, Waszyngton</p>
+                    <p class="treasure-summary-item" th:text="${treasure.dates}">Daty: 01-05-2023 - 09.05.2023</p>
+                    <p class="treasure-summary-item" th:text="${treasure.price}">Cena: 1999,00</p>
+                    <p class="treasure-summary-item" th:text="${treasure.link}">Link: www.znalezione.pl/</p>
+                    <p class="treasure-summary-item" th:text="${treasure.description}">
+                        Nie miales okazji jeszcze nigdy zwiedziec Stanow Zjednoczonych? To Twoja szansa!
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="treasure-ads-container treasure-section">
+            <img src="../static/img/ads.png"
+                 alt="tytuł znaleziska"
+                 class="treasure-summary-cover"
+            />
+        </section>
+        <section class="treasure-section">
+            <h2 class="treasure-section-heading">Co warto zobaczyc w okolicy</h2>
+            <p>Stolica USA posiada wiele ikonicznych budynków, ważnych muzeów i monumentalnych pomników.
+                Ich zdecydowana większość znajduje się w długim na około 4 kilometry parku National Mall lub jego sąsiedztwie.
+                Oprócz miejsc tak oczywistych jak Biały Dom czy Kapitol, zwróć uwagę na tutejsze muzea, zwłaszcza te Instytutu Smithsonian – darmowe i absolutnie wyjątkowe.
+                Wśród nich znajdziesz na przykład gigantyczne Muzeum Historii i Kultury Afroamerykanów, Muzeum Indian Amerykańskich,
+                Muzeum Lotnictwa i Przestrzeni Kosmicznej, Archiwa Narodowe, Muzeum Amerykańskiej Historii…</p>
+        </section>
+    </main>
+</div>
+</body>
+</html>
