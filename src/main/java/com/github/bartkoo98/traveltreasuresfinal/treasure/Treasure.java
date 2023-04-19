@@ -17,6 +17,7 @@ class Treasure {
     private BigDecimal price;
     private String link;
     private String description;
+//    private String photo;
     private boolean promoted;
     @ManyToOne
     @JoinColumn(name = "category_id", referencedColumnName = "id")

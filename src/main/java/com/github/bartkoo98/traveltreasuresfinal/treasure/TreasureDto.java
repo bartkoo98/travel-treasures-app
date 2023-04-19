@@ -11,6 +11,7 @@ public class TreasureDto {
     private String link;
     private String description;
     private boolean promoted;
+    private String photo;
     private String category;
 
     public TreasureDto(Long id, String title, String destination, String dates, BigDecimal price, String link, String description, boolean promoted, String category) {
@@ -25,6 +26,8 @@ public class TreasureDto {
         this.category = category;
     }
 
+
+    public TreasureDto() {};
     public Long getId() {
         return id;
     }

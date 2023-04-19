@@ -129,7 +129,7 @@ i powinna zajmować większość dostępnej przestrzeni
         border: 1px #6d6d6d solid;
     }
     /*Plakat - usuniecie paddingu*/
-    .treasure-list-item-poster {
+    .treasure-list-item-photo {
         display: block;
         max-width: 200px;
     }
@@ -198,3 +198,20 @@ i powinna zajmować większość dostępnej przestrzeni
         display: block;
         text-align: center;
     }
+.mc-form > input,
+.mc-form > textarea,
+.mc-form > button,
+.mc-form > select { /*dodany selektor*/
+    font-size: 1.2rem;
+    color: black;
+    padding: 8px;
+}
+/*Większy checkbox*/
+.mc-form > input[type=checkbox] {
+    transform: scale(1.5);
+    margin-left: 5px;
+}
+/*Biały kolor tekstu przy wyborze pliku*/
+.mc-form > input[type=file] {
+    color: white;
+}

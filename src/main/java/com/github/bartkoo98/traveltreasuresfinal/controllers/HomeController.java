@@ -1,4 +1,4 @@
-package com.github.bartkoo98.traveltreasuresfinal.web;
+package com.github.bartkoo98.traveltreasuresfinal.controllers;
 
 
 import com.github.bartkoo98.traveltreasuresfinal.treasure.TreasureService;
