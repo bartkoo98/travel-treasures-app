@@ -1,3 +1,3 @@
-insert into category (name) values ('Flights');
-insert into category (name) values ('Accommodation');
-insert into category (name) values ('Pack');
+insert into category (name, description) values ('Flights', 'Tanie loty, bez noclegow.');
+insert into category (name, description) values ('Accommodation', 'Znajdz najtansza opcje zakwaterowania w wymarzonej destynacji!');
+insert into category (name, description) values ('Package', 'Pakiety lotow i noclegow, super oferty.');

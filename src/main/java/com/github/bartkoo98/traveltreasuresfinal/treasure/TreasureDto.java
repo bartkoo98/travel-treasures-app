@@ -1,4 +1,4 @@
-package com.github.bartkoo98.traveltreasuresfinal.treasure.dto;
+package com.github.bartkoo98.traveltreasuresfinal.treasure;
 
 import java.math.BigDecimal;
 

@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface TreasureRepository extends CrudRepository<Treasure, Long> {
     List<Treasure> findAllByPromotedIsTrue();
+    List<Treasure> findAllByCategory_NameIgnoreCase(String category);
 }

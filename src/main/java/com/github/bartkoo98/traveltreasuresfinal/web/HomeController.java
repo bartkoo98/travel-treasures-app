@@ -2,7 +2,7 @@ package com.github.bartkoo98.traveltreasuresfinal.web;
 
 
 import com.github.bartkoo98.traveltreasuresfinal.treasure.TreasureService;
-import com.github.bartkoo98.traveltreasuresfinal.treasure.dto.TreasureDto;
+import com.github.bartkoo98.traveltreasuresfinal.treasure.TreasureDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

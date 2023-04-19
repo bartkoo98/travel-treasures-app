@@ -1,7 +1,6 @@
 package com.github.bartkoo98.traveltreasuresfinal.treasure;
 
 
-import com.github.bartkoo98.traveltreasuresfinal.treasure.dto.TreasureDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,4 +23,13 @@ public class TreasureService {
     public Optional<TreasureDto> findTreasureById(Long id) {
         return treasureRepository.findById(id).map(TreasureDtoMapper::map);
     }
+
+    public List<TreasureDto> findTreasuresByCategoryName(String category) {
+        return treasureRepository.findAllByCategory_NameIgnoreCase(category)
+                .stream()
+                .map(TreasureDtoMapper::map)
+                .toList();
+    }
+
+
 }

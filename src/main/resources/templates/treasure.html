@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pl">
+<!-- Dodana przestrzeń nazw th -->
+<html lang="pl" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>TravelTreasures</title>
@@ -11,32 +12,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <script defer src="../static/scripts/common.js"></script>
-    <link rel="stylesheet" href="../static/styles/main.css">
+    <!-- Dynamicznie budowany adres do skryptu JS i arkusza stylów -->
+    <script defer src="../static/scripts/common.js" th:src="@{/scripts/common.js}"></script>
+    <link rel="stylesheet" href="../static/styles/main.css" th:href="@{/styles/main.css}">
 </head>
 <body>
 <div class="container">
     <ul class="menu">
         <li class="menu-logo-container">
+            <!-- Dynamicznie budowany adres do strony głównej -->
             <a href="#" th:href="@{/}">
-                <i class="fal fa-treasure-chest"></i>TravelTreasures
+                <i class="fa-sharp fa-light fa-treasure-chest"></i> TravelTreasures
             </a>
         </li>
         <li class="menu-toggle">
             <a href="#"><i id="toggle-icon" class="far fa-plus-square"></i></a>
         </li>
         <li class="menu-item">
-            <a href="#">Kategorie</a>
+            <a href="#" th:href="@{/categories}">Kategorie</a>
         </li>
         <li class="menu-item">
-            <a href="#">Top10</a>
+            <a href="#">Profil</a>
         </li>
         <li class="menu-item">
             <a href="#">Zaloguj się</a>
         </li>
     </ul>
     <header class="jumbotron">
-        <h1 class="jumbotron-header">Travel Treasures</h1>
         <p class="jumbotron-description">
             Najtańsze loty, noclegi i wypożyczalnie. Dziel się z innymi swoimi skarbami i korzystaj z cudzych znalezisk!
         </p>
@@ -56,12 +58,12 @@
                 <div class="treasure-summary-info">
                     <h1 class="treasure-summary-title" th:text="${treasure.title}">Tanie loty do Stanów na majówkę!</h1>
                     <p class="treasure-summary-category">Kategoria: <a href="#"
-                                                                       th:href="@{|/kategoria/${treasure.category}|}"
+                                                                       th:href="@{|/category/${treasure.category}|}"
                                                                        th:text="${treasure.category}">Flights</a>
                     </p>
                     <p class="treasure-summary-item" th:text="${treasure.destination}">Kierunek: Stany Zjednoczone, Waszyngton</p>
                     <p class="treasure-summary-item" th:text="${treasure.dates}">Daty: 01-05-2023 - 09.05.2023</p>
-                    <p class="treasure-summary-item" th:text="${treasure.price}">Cena: 1999,00</p>
+                    <p class="treasure-summary-item" th:text="${treasure.price} + pln">Cena: 1999,00</p>
                     <p class="treasure-summary-item" th:text="${treasure.link}">Link: www.znalezione.pl/</p>
                     <p class="treasure-summary-item" th:text="${treasure.description}">
                         Nie miales okazji jeszcze nigdy zwiedziec Stanow Zjednoczonych? To Twoja szansa!
@@ -71,7 +73,7 @@
         </section>
         <section class="treasure-ads-container treasure-section">
             <img src="../static/img/ads.png"
-                 alt="tytuł znaleziska"
+                 th:src="@{/img/ads.png}"
                  class="treasure-summary-cover"
             />
         </section>
