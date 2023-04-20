@@ -5,10 +5,12 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
 
-    <include file="0001_create_table_category.xml" relativeToChangelogFile="true" />
-    <include file="0002_create_table_treasure.xml" relativeToChangelogFile="true" />
+    <include file="01_create_table_category.xml" relativeToChangelogFile="true" />
+    <include file="02_create_table_treasure.xml" relativeToChangelogFile="true" />
+    <include file="03_create_table_users_role.xml" relativeToChangelogFile="true" />
 
 
-    <include file="../testdata/0001_categories.sql" relativeToChangelogFile="true" context="dev"/>
-    <include file="../testdata/0002_treasures.sql" relativeToChangelogFile="true" context="dev"/>
+    <include file="../testdata/01_categories.sql" relativeToChangelogFile="true" context="dev"/>
+    <include file="../testdata/02_treasures.sql" relativeToChangelogFile="true" context="dev"/>
+    <include file="../testdata/03_users_and_roles.sql" relativeToChangelogFile="true" context="dev"/>
 </databaseChangeLog>
