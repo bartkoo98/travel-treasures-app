@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- Dodana przestrzeń nazw th -->
-<html lang="pl" xmlns:th="https://www.thymeleaf.org">
+<html lang="pl" xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">>
 <head>
   <meta charset="UTF-8">
   <title>TravelTreasures</title>
@@ -28,8 +28,11 @@
     <li class="menu-toggle">
       <a href="#"><i id="toggle-icon" class="far fa-plus-square"></i></a>
     </li>
-    <li class="menu-item">
+    <li class="menu-item" sec:authorize="hasAnyRole('ADMIN')">
       <a href="#" th:href="@{/admin}">Zarządzanie</a>
+    </li>
+    <li class="menu-item">
+      <a href="#" th:href="@{/treasure/add-treasure}">Dodaj znalezisko</a>
     </li>
     <li class="menu-item">
       <a href="#" th:href="@{/categories}">Kategorie</a>
@@ -38,23 +41,25 @@
       <a href="#">Profil</a>
     </li>
     <li class="menu-item">
-      <a href="#">Zaloguj się</a>
+      <a href="#" th:href="@{/login}" sec:authorize="!isAuthenticated()">Zaloguj się</a>
+      <a href="#" th:href="@{/logout}" sec:authorize="isAuthenticated()">Wyloguj się</a>
     </li>
   </ul>
   <header class="jumbotron">
+    <h1 class="jumbotron-header">Travel Treasures</h1>
     <p class="jumbotron-description">
       Najtańsze loty, noclegi i wypożyczalnie. Dziel się z innymi swoimi skarbami i korzystaj z cudzych znalezisk!
     </p>
   </header>
 <main class="main-content">
   <h2 class="list-heading">Dodaj nowe znalezisko</h2>
-  <form action="" method="post" enctype="multipart/form-data" class="mc-form" th:object="${treasure}">
+  <form action="#" th:action="@{/treasure/add-treasure}"  method="post" class="mc-form" th:object="${treasure}">
     <label for="title">Tytuł znaleziska</label>
-    <input type="text" id="title" th:field="*{title}">
+    <input type="text" id="title" placeholder="Tytuł znaleziska" th:field="*{title}">
     <label>Kierunek</label>
-    <input type="destination" id="destination" th:field="*{destination}">
+    <input type="destination" id="destination" placeholder="np. Polska, Sopot" th:field="*{destination}">
     <label>Kiedy</label>
-    <input type="number" id="releaseYear" th:field="*{dates}">
+    <input type="text" id="releaseYear" placeholder="np. 10-03-2023-13.03.2023" th:field="*{dates}">
     <label>Kategoria</label>
     <select id="category" th:field="*{category}" required>
       <option value="" hidden>Wybierz kategorie</option>
@@ -65,9 +70,9 @@
 <!--    <label for="poster">Plakat</label>-->
 <!--    <input type="file" id="poster" th:field="*{poster}" accept="image/png, image/jpeg">-->
     <label>Cena</label>
-    <input type="price" id="price" th:field="*{price}">
+    <input type="price" id="price" placeholder="np. 500zl" th:field="*{price}">
     <label>Link</label>
-    <input type="link" id="link" th:field="*{link}">
+    <input type="link" id="link" placeholder="np. www.znalezione.com" th:field="*{link}">
     <label>Krótki opis - max 200 znaków</label>
     <textarea id="description" rows="5" th:field="*{description}"></textarea>
     <button type="submit">Dodaj</button>

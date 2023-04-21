@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- Dodana przestrzeń nazw th -->
-<html lang="pl" xmlns:th="https://www.thymeleaf.org">
+<html lang="pl" xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">>
 <head>
     <meta charset="UTF-8">
     <title>TravelTreasures</title>
@@ -28,8 +28,11 @@
         <li class="menu-toggle">
             <a href="#"><i id="toggle-icon" class="far fa-plus-square"></i></a>
         </li>
-        <li class="menu-item">
+        <li class="menu-item" sec:authorize="hasAnyRole('ADMIN')">
             <a href="#" th:href="@{/admin}">Zarządzanie</a>
+        </li>
+        <li class="menu-item">
+            <a href="#" th:href="@{/treasure/add-treasure}">Dodaj znalezisko</a>
         </li>
         <li class="menu-item">
             <a href="#" th:href="@{/categories}">Kategorie</a>
@@ -38,10 +41,12 @@
             <a href="#">Profil</a>
         </li>
         <li class="menu-item">
-            <a href="#">Zaloguj się</a>
+            <a href="#" th:href="@{/login}" sec:authorize="!isAuthenticated()">Zaloguj się</a>
+            <a href="#" th:href="@{/logout}" sec:authorize="isAuthenticated()">Wyloguj się</a>
         </li>
     </ul>
     <header class="jumbotron">
+        <h1 class="jumbotron-header">Travel Treasures</h1>
         <p class="jumbotron-description">
             Najtańsze loty, noclegi i wypożyczalnie. Dziel się z innymi swoimi skarbami i korzystaj z cudzych znalezisk!
         </p>

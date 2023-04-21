@@ -3,6 +3,7 @@ package com.github.bartkoo98.traveltreasuresfinal.treasure;
 
 import com.github.bartkoo98.traveltreasuresfinal.category.Category;
 import com.github.bartkoo98.traveltreasuresfinal.category.CategoryRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,7 +35,7 @@ public class TreasureService {
                 .map(TreasureDtoMapper::map)
                 .toList();
     }
-
+    @Transactional
     public void addTreasure(TreasureDto treasureToSave) {
         Treasure treasure = new Treasure();
         treasure.setTitle(treasure.getTitle());
