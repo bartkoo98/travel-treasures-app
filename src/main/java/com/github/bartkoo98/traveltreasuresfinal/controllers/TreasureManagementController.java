@@ -3,6 +3,7 @@ package com.github.bartkoo98.traveltreasuresfinal.controllers;
 import com.github.bartkoo98.traveltreasuresfinal.category.CategoryDto;
 import com.github.bartkoo98.traveltreasuresfinal.category.CategoryService;
 import com.github.bartkoo98.traveltreasuresfinal.treasure.TreasureDto;
+import com.github.bartkoo98.traveltreasuresfinal.treasure.TreasureSaveDto;
 import com.github.bartkoo98.traveltreasuresfinal.treasure.TreasureService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,15 +26,15 @@ public class TreasureManagementController {
     public String addTreasureForm(Model model) {
         List<CategoryDto> allCategories = categoryService.findAllCategories();
         model.addAttribute("categories", allCategories);
-        TreasureDto treasure = new TreasureDto();
+        TreasureSaveDto treasure = new TreasureSaveDto();
         model.addAttribute("treasure", treasure);
         return "treasure-add";
     }
 
     @PostMapping("/treasure/add-treasure")
-    public String addTreasure(TreasureDto treasure, RedirectAttributes redirectAttributes) {
+    public String addTreasure(TreasureSaveDto treasure, RedirectAttributes redirectAttributes) {
         treasureService.addTreasure(treasure);
-        redirectAttributes.addFlashAttribute("notification", "Znalezisko %s zostało zapisane".formatted(treasure.getTitle()));
+        redirectAttributes.addFlashAttribute("notification", "Znalezisko '%s' zostało zapisane".formatted(treasure.getTitle()));
         return "redirect:/";
     }
 }

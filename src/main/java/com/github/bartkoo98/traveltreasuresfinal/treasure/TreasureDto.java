@@ -7,14 +7,13 @@ public class TreasureDto {
     private String title;
     private String destination;
     private String dates;
-    private BigDecimal price;
+    private String price;
     private String link;
     private String description;
     private boolean promoted;
-    private String photo;
     private String category;
 
-    public TreasureDto(Long id, String title, String destination, String dates, BigDecimal price, String link, String description, boolean promoted, String category) {
+    public TreasureDto(Long id, String title, String destination, String dates, String price, String link, String description, boolean promoted, String category) {
         this.id = id;
         this.title = title;
         this.destination = destination;
@@ -27,7 +26,6 @@ public class TreasureDto {
     }
 
 
-    public TreasureDto() {};
     public Long getId() {
         return id;
     }
@@ -60,11 +58,11 @@ public class TreasureDto {
         this.dates = dates;
     }
 
-    public BigDecimal getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 

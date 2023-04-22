@@ -52,17 +52,20 @@
     </p>
   </header>
   <main class="main-content">
-    <h2 class="list-heading" th:text="${heading}">Nazwa Kategorii</h2>
-    <p class="list-description">Wybierz kategorie która Ci odpowiada.</p>
-    <ul class="list-border">
-      <li th:each="category: ${categories}">
-        <a th:href="@{|/category/${category.name}|}"
-           th:text="${category.name}">
-          Loty
-        </a>
-      </li>
-    </ul>
-  </main>
+    <h2 class="list-heading">Zaloguj się</h2>
+    <form action="" th:action="@{/login}" method="post" class="mc-form">
+      <p th:if="${param.error}"
+         th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}"
+         class="mc-form-message">
+        Błąd logowania.
+      </p>
+      <label for="username">Adres email</label>
+      <input id="username" name="username" placeholder="nazwa użytkownika">
+      <label for="password">Hasło</label>
+      <input id="password" name="password" placeholder="hasło" type="password">
+      <button type="submit">Zaloguj się</button>
+      <p class="registration-link">Nie masz jeszcze konta? <a href="#" th:href="@{/rejestracja}">Zarejestruj się</a></p>
+    </form>
   <footer class="footer">
     <p>TravelTreasures 2023 <i class="fas fa-copyright"></i> github.com/bartkoo98</p>
   </footer>

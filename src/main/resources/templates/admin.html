@@ -32,13 +32,13 @@
       <a href="#" th:href="@{/admin}">Zarządzanie</a>
     </li>
     <li class="menu-item">
-      <a href="#" th:href="@{/treasure/add-treasure}">Dodaj znalezisko</a>
+      <a href="#" th:href="@{/treasure/add-treasure}" sec:authorize="isAuthenticated()">Dodaj znalezisko</a>
     </li>
-    <li class="menu-item">
+    <li class="menu-item" sec:authorize="hasAnyRole('ADMIN', 'USER')">
       <a href="#" th:href="@{/categories}">Kategorie</a>
     </li>
     <li class="menu-item">
-      <a href="#">Profil</a>
+      <a href="#" sec:authorize="isAuthenticated()">Profil</a>
     </li>
     <li class="menu-item">
       <a href="#" th:href="@{/login}" sec:authorize="!isAuthenticated()">Zaloguj się</a>

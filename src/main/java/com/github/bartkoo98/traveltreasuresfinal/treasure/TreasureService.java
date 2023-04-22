@@ -3,7 +3,6 @@ package com.github.bartkoo98.traveltreasuresfinal.treasure;
 
 import com.github.bartkoo98.traveltreasuresfinal.category.Category;
 import com.github.bartkoo98.traveltreasuresfinal.category.CategoryRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -35,16 +34,16 @@ public class TreasureService {
                 .map(TreasureDtoMapper::map)
                 .toList();
     }
-    @Transactional
-    public void addTreasure(TreasureDto treasureToSave) {
+
+    public void addTreasure(TreasureSaveDto treasureToSave) {
         Treasure treasure = new Treasure();
-        treasure.setTitle(treasure.getTitle());
-        treasure.setDestination(treasure.getDestination());
-        treasure.setDates(treasure.getDates());
-        treasure.setPrice(treasure.getPrice());
-        treasure.setLink(treasure.getLink());
-        treasure.setDescription(treasure.getDescription());
-        treasure.setPromoted(treasure.isPromoted());
+        treasure.setTitle(treasureToSave.getTitle());
+        treasure.setDestination(treasureToSave.getDestination());
+        treasure.setDates(treasureToSave.getDates());
+        treasure.setPrice(treasureToSave.getPrice());
+        treasure.setLink(treasureToSave.getLink());
+        treasure.setDescription(treasureToSave.getDescription());
+        treasure.setPromoted(treasureToSave.isPromoted());
         Category category = categoryRepository.findByNameIgnoreCase(treasureToSave.getCategory()).orElseThrow();
         treasure.setCategory(category);
         treasureRepository.save(treasure);

@@ -32,13 +32,13 @@
       <a href="#" th:href="@{/admin}">Zarządzanie</a>
     </li>
     <li class="menu-item">
-      <a href="#" th:href="@{/treasure/add-treasure}">Dodaj znalezisko</a>
+      <a href="#" th:href="@{/treasure/add-treasure}" sec:authorize="isAuthenticated()">Dodaj znalezisko</a>
     </li>
     <li class="menu-item">
       <a href="#" th:href="@{/categories}">Kategorie</a>
     </li>
     <li class="menu-item">
-      <a href="#">Profil</a>
+      <a href="#" sec:authorize="isAuthenticated()">Profil</a>
     </li>
     <li class="menu-item">
       <a href="#" th:href="@{/login}" sec:authorize="!isAuthenticated()">Zaloguj się</a>
@@ -53,14 +53,14 @@
   </header>
 <main class="main-content">
   <h2 class="list-heading">Dodaj nowe znalezisko</h2>
-  <form action="#" th:action="@{/treasure/add-treasure}"  method="post" class="mc-form" th:object="${treasure}">
+  <form action="#" th:action="@{/treasure/add-treasure}" method="post" class="mc-form" th:object="${treasure}">
     <label for="title">Tytuł znaleziska</label>
     <input type="text" id="title" placeholder="Tytuł znaleziska" th:field="*{title}">
-    <label>Kierunek</label>
-    <input type="destination" id="destination" placeholder="np. Polska, Sopot" th:field="*{destination}">
-    <label>Kiedy</label>
-    <input type="text" id="releaseYear" placeholder="np. 10-03-2023-13.03.2023" th:field="*{dates}">
-    <label>Kategoria</label>
+    <label for="destination">Kierunek</label>
+    <input type="text" id="destination" placeholder="np. Polska, Sopot" th:field="*{destination}">
+    <label for="dates">Kiedy</label>
+    <input type="text" id="dates" placeholder="np. 10-03-2023-13.03.2023" th:field="*{dates}">
+    <label for="category">Kategoria</label>
     <select id="category" th:field="*{category}" required>
       <option value="" hidden>Wybierz kategorie</option>
       <option th:each="category: ${categories}" th:value="${category.name}" th:text="${category.name}"></option>
@@ -69,11 +69,11 @@
     <input id="promoted" type="checkbox" th:field="*{promoted}">
 <!--    <label for="poster">Plakat</label>-->
 <!--    <input type="file" id="poster" th:field="*{poster}" accept="image/png, image/jpeg">-->
-    <label>Cena</label>
-    <input type="price" id="price" placeholder="np. 500zl" th:field="*{price}">
-    <label>Link</label>
-    <input type="link" id="link" placeholder="np. www.znalezione.com" th:field="*{link}">
-    <label>Krótki opis - max 200 znaków</label>
+    <label for="price">Cena</label>
+    <input type="text" id="price" placeholder="np. 500zl" th:field="*{price}">
+    <label for="link">Link</label>
+    <input type="text" id="link" placeholder="np. www.znalezione.com" th:field="*{link}">
+    <label for="description">Krótki opis - max 200 znaków</label>
     <textarea id="description" rows="5" th:field="*{description}"></textarea>
     <button type="submit">Dodaj</button>
   </form>

@@ -1,32 +1,15 @@
 package com.github.bartkoo98.traveltreasuresfinal.treasure;
 
-import java.math.BigDecimal;
-
 public class TreasureSaveDto {
 
     private String title;
     private String destination;
     private String dates;
-    private BigDecimal price;
+    private String price;
     private String link;
     private String description;
     private boolean promoted;
-    private String photo;
     private String category;
-
-    public TreasureSaveDto(String title, String destination, String dates, BigDecimal price, String link, String description, boolean promoted, String category) {
-        this.title = title;
-        this.destination = destination;
-        this.dates = dates;
-        this.price = price;
-        this.link = link;
-        this.description = description;
-        this.promoted = promoted;
-        this.category = category;
-    }
-
-
-    public TreasureSaveDto() {};
 
 
     public String getTitle() {
@@ -53,11 +36,11 @@ public class TreasureSaveDto {
         this.dates = dates;
     }
 
-    public BigDecimal getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 

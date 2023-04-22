@@ -14,7 +14,7 @@ class Treasure {
     private String title;
     private String destination;
     private String dates;
-    private BigDecimal price;
+    private String price;
     private String link;
     private String description;
 //    private String photo;
@@ -63,11 +63,11 @@ class Treasure {
         this.dates = dates;
     }
 
-    public BigDecimal getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(BigDecimal price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
