@@ -1,6 +1,6 @@
 INSERT INTO users (email, password) VALUES
-    ('admin@email.com', '{noop}admin'),
-    ('user@email.com', '{noop}user');
+    ('admin@email.com', '{noop}1234'),
+    ('user@email.com', '{noop}1234');
 
 INSERT INTO user_role (name, description) VALUES
     ('ADMIN', 'pełne uprawnienia'),
