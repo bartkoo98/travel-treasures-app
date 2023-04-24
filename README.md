@@ -13,5 +13,5 @@ Currently working on adding integration tests, adding a new admin function like 
 - HTML/CSS
 
 ## How to run?
-Download project and open with Intelij, later press shift + F10 or right click on TravelTreasuresFinalApplication and run.
+Download project and open with Intellij, later press shift + F10 or right click on TravelTreasuresFinalApplication and run.
 Application should launch on http://localhost:8080
