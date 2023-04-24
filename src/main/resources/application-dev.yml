@@ -2,6 +2,8 @@ spring:
   datasource:
     url: jdbc:h2:mem:test
 
+  flyway:
+    enabled: false
   liquibase:
     contexts: dev
     change-log: classpath:db/changelog/master.xml
