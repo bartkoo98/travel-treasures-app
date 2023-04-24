@@ -1,47 +1,38 @@
-/*CSS reset*/
 * {
     margin: 0;
     padding: 0;
     color: black;
 }
-/*Zmiana domyślnego fontu*/
 body {
     font-family: 'Roboto', sans-serif;
 }
-/*Ustawienie koloru odnośników i usunięcie podkreśleń*/
 a {
     text-decoration: none;
     color: #4B0082;
 }
-/*Kolor tła w głównym kontenerze i ustawienie elastycznego rozkładu
-Elementy będą ustawiane jeden pod drugim
-*/
+
 .container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     background-color: #B0E0E6;
 }
-/*Główna sekcja powinna być skalowana wraz z rozciąganiem okna przeglądarki
-i powinna zajmować większość dostępnej przestrzeni
-*/
+
 .main-content {
     flex: 1;
 }
 
-/*MENU START*/
-/*Kolor logotypu i przycisku rozwijającego menu*/
+
 .logo,
 #toggle-icon {
     color: #4B0082;
 }
-/*Ustawienia dla responsywnego menu*/
+
 .menu {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-/*Elementy menu domyślnie są ukryte*/
 .menu-item {
     width: 100%;
     padding: 16px;
@@ -49,53 +40,21 @@ i powinna zajmować większość dostępnej przestrzeni
     text-align: center;
     display: none;
 }
-/*Po wciśnięciu przycisku elementy będą widoczne*/
 .expanded > .menu-item {
     display: block;
 }
-/*padding dla elementów menu*/
 .menu-logo-container,
 .menu-toggle {
     display: block;
     padding: 16px 32px;
     font-size: 20px;
 }
-/*MENU END*/
 
-/*FOOTER START*/
-/*Wyśrodkowanie stopki*/
 .footer {
     padding: 8px;
     text-align: center;
 }
-/*FOOTER END*/
 
-/*!*Responsive*!*/
-/*@media only screen and (min-width: 992px) {*/
-/*    !*Na ekranie powyżej 992px ukrywamy przycisk do rozwijania menu*!*/
-/*    .menu-toggle {*/
-/*        display: none;*/
-/*    }*/
-
-/*    !*Elementy menu nie powinny już zajmować całej szerokości, tylko być obok siebie*!*/
-/*    .menu-item {*/
-/*        display: block;*/
-/*        width: auto;*/
-/*        border-bottom: 0;*/
-/*    }*/
-
-/*    !*Kontener z logo powinien być rozciągnięty, a nawigacja po prawej stronie*!*/
-/*    .menu-logo-container {*/
-/*        flex: 1;*/
-/*    }*/
-
-/*    !*Na dużym ekranie ograniczamy szerokość do 960px*!*/
-/*    .main-content,*/
-/*    .menu {*/
-/*        align-self: center;*/
-/*        width: 960px;*/
-/*    }*/
-    /*Jumbotron START*/
     .jumbotron {
         background-image: url("../img/mainbackground.png");
         background-position: center;
@@ -112,30 +71,23 @@ i powinna zajmować większość dostępnej przestrzeni
         color: white;
         font-size: 1.2rem;
     }
-    /*Jumbotron END*/
-    /*Listing START*/
-    /*Nagłówek*/
     .list-heading,
     .list-description {
         text-align: center;
         margin: 16px 0;
     }
-    /*Usunięcie dekoracji elementów listy (kropki na początku)*/
     .treasure-list {
         list-style-type: none;
     }
-    /*Margines i ramka wokół pojedynczego filmu*/
     .treasure-list-item {
         margin-bottom: 16px;
         display: flex;
         border: 1px #6d6d6d solid;
     }
-    /*Plakat - usuniecie paddingu*/
     .treasure-list-item-photo {
         display: block;
         max-width: 200px;
     }
-    /*Karta filmu*/
     .treasure-list-item-card {
         display: flex;
         flex-direction: column;
@@ -151,47 +103,36 @@ i powinna zajmować większość dostępnej przestrzeni
     .treasure-list-item-rating {
         font-size: 1.6rem;
     }
-    /*Listing END*/
-    /*Treasure.html*/
-    /*Informacje o filmie w jednym rzędzie z odstępem od jumbotrona*/
+
     .treasure-summary {
         display: flex;
         margin-top: 16px;
     }
-    /*Mniejsza okładka na małych ekranach*/
     .treasure-summary-cover {
         object-fit: contain;
         max-width: 200px;
     }
-    /*Odstęp informacji o znalezisku od okładki*/
     .treasure-summary-info {
         margin-left: 16px;
     }
-    /*Oryginalny tytuł w kolorze szarym i odstęp pod nim*/
     .treasure-summary-category {
         margin-bottom: 16px;
     }
-    /*Odstępy między poszczególnymi informacjami*/
     .treasure-summary-item {
         margin: 8px 0;
     }
-    /*Większy tytuł filmu*/
     .treasure-summary-title {
         font-size: 2rem;
     }
 
-    /*Odstępy między elementami w ramce z głosowaniem*/
     .treasure-rating-container > * {
         margin: 8px 0;
     }
-    /*Ramka dla boxu z głosowaniem*/
     .treasure-section {
         margin-top: 16px;
         padding: 16px;
         border: 1px #6d6d6d solid;
     }
-    /*Treasure.html END*/
-    /*Odstęp pod nagłówkami sekcji*/
     .treasure-section-heading {
         margin-bottom: 8px;
     }
@@ -203,17 +144,17 @@ i powinna zajmować większość dostępnej przestrzeni
 .mc-form > input,
 .mc-form > textarea,
 .mc-form > button,
-.mc-form > select { /*dodany selektor*/
+.mc-form > select {
     font-size: 1.2rem;
     color: black;
     padding: 8px;
 }
-/*Większy checkbox*/
+
 .mc-form > input[type=checkbox] {
     transform: scale(1.5);
     margin-left: 5px;
 }
-/*Biały kolor tekstu przy wyborze pliku*/
+
 .mc-form > input[type=file] {
     color: white;
 }
@@ -227,17 +168,17 @@ i powinna zajmować większość dostępnej przestrzeni
 .mc-form > input,
 .mc-form > textarea,
 .mc-form > button,
-.mc-form > select { /*dodany selektor*/
+.mc-form > select {
     font-size: 1.2rem;
     color: black;
     padding: 8px;
 }
-/*Większy checkbox*/
+
 .mc-form > input[type=checkbox] {
     transform: scale(1.5);
     margin-left: 5px;
 }
-/*Biały kolor tekstu przy wyborze pliku*/
+
 .mc-form > input[type=file] {
     color: white;
 }

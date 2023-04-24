@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Dodana przestrzeń nazw th -->
 <html lang="pl" xmlns:th="https://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">>
 <head>
     <meta charset="UTF-8">
@@ -12,7 +11,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <!-- Dynamicznie budowany adres do skryptu JS i arkusza stylów -->
     <script defer src="../static/scripts/common.js" th:src="@{/scripts/common.js}"></script>
     <link rel="stylesheet" href="../static/styles/main.css" th:href="@{/styles/main.css}">
 </head>
@@ -20,7 +18,6 @@
 <div class="container">
     <ul class="menu">
         <li class="menu-logo-container">
-            <!-- Dynamicznie budowany adres do strony głównej -->
             <a href="#" th:href="@{/}">
                 <i class="fa-sharp fa-light fa-treasure-chest"></i> TravelTreasures
             </a>

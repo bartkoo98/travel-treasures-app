@@ -9,5 +9,4 @@ class TraveltreasuresfinalApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }
