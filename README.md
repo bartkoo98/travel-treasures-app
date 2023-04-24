@@ -8,6 +8,7 @@ Currently working on adding integration tests, adding a new admin function like 
 - Java
 - Spring Framework
 - Spring Boot
+- Thymeleaf
 - H2 database/SQL
 - Liquibase
 - HTML/CSS
