@@ -1,8 +1,8 @@
 # Travel Treasures - share the opportunity
 ## About:
-At this point it is my main Spring web project, in which I am constantly improving something. For now, the application is running on a test profile with H2 database.
-The app relies on users uploading travel opportunities. It focuses on the backend layer, with a total basic GUI.
-Currently working on adding integration tests, adding a new admin function like deleting finds and user accounts.
+At this point it is my biggest Spring web project, but I stopped working on it in favor of a new one(influx). The application is running on a test profile with H2 database.
+The app relies on users uploading travel opportunities. It focuses on the backend layer, with a total basic GUI. The project was for science, mainly thymeleaf.
+Maybe one day I'll come back to add some functionality like adding integration tests, adding a new admin function like deleting finds and user accounts.
 
 ## What I used?
 - Java
